@@ -44,4 +44,8 @@ when switching between puzzles, the puzzle pieces should also reset.
 
 in order to fix this we can create a new function
 
-we can call this function reserPuzzle to make it simple
+we can call this function resetPuzzle to make it simple
+
+the images are children of the puzzle zone once they have been dropped in the puzzle
+
+so we can add in code that removes all children of the drop done when a condition is true
