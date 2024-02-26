@@ -19,3 +19,13 @@ so if the zone does not contain any images it will not allow any puzzle pieces t
 like this
 
 if(this.querySelector('img))
+
+by adding this line, java will check if there is any images in the zone. if there are NO images in the zone it will not allow you to drop any images
+
+but we want this line of code to do the opposite, to check if there is an image and if there IS, to prevent the appendChild(draggedpiece) from functioning, and prevent further images from being dropped
+
+in order to do this we can add an exclaimation point to our like of code like so:
+
+if(!this.querySelector('img))
+
+now this line of code will make the java check the zone to see if there IS an image, that is true, if there is an image, it will prevent any more images from being dropped.
