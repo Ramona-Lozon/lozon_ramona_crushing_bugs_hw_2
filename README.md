@@ -29,3 +29,19 @@ in order to do this we can add an exclaimation point to our like of code like so
 if(!this.querySelector('img))
 
 now this line of code will make the java check the zone to see if there IS an image, that is true, if there is an image, it will prevent any more images from being dropped.
+
+bug fix #2
+
+there is a second bug within the java script. 
+
+on the site there is a reset button that should remove all pieces from the puzzle board when pressed. 
+
+it does not work. 
+
+there are also 4 different puzzles that can be made on this puzzle site. 
+
+when switching between puzzles, the puzzle pieces should also reset.
+
+in order to fix this we can create a new function
+
+we can call this function reserPuzzle to make it simple
