@@ -26,8 +26,8 @@ function changeBGImage() {
 
 	// bug fix #2 should go here. it's at most 3 lines of JS code.
 
-	function.resetPuzzleBoard() {
-		puzzlePieces(forEach)
+function.resetPuzzle() {
+		puzzlePieces.forEach(piece => piece.parentNode.appendChild(piece));
 	}
 
 	puzzleBoard.style.backgroundImage = `url(images/backGround${this.id}.jpg)`;
@@ -51,7 +51,7 @@ function handleDrop(event) {
 
 // bug fix #1 should go here and should be about 3 lines of code
 
-if(!this.querySelector('img'))
+if(!this.querySelector('img'));
 
 	this.appendChild(draggedPiece);
 }
