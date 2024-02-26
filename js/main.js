@@ -46,6 +46,8 @@ function handleDrop(event) {
 
 // bug fix #1 should go here and should be about 3 lines of code
 
+
+
 	this.appendChild(draggedPiece);
 }
 
