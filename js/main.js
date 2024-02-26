@@ -25,6 +25,11 @@ function changeBGImage() {
 	// and updating the background-image style of the puzzle board element.
 
 	// bug fix #2 should go here. it's at most 3 lines of JS code.
+
+	function.resetPuzzleBoard() {
+		puzzlePieces(forEach)
+	}
+
 	puzzleBoard.style.backgroundImage = `url(images/backGround${this.id}.jpg)`;
 }
 
@@ -50,6 +55,8 @@ if(!this.querySelector('img'))
 
 	this.appendChild(draggedPiece);
 }
+
+
 
 // 1 to many event handling
 // add event handling to each button in the collection of buttons, one at a time
