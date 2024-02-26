@@ -48,4 +48,8 @@ we can call this function resetPuzzle to make it simple
 
 the images are children of the puzzle zone once they have been dropped in the puzzle
 
-so we can add in code that removes all children of the drop done when a condition is true
+so we can add in code that removes all children of the drop done when a something happens
+
+then we can add an event listener that will trigger when the reset button is pressed
+
+so when the event listener is triggered, all children (images) of the drop zone will be removed
