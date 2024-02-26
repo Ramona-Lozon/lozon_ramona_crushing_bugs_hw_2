@@ -47,6 +47,7 @@ function handleDrop(event) {
 // bug fix #1 should go here and should be about 3 lines of code
 
 
+if(this.querySelector('img'))
 
 	this.appendChild(draggedPiece);
 }
