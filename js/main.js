@@ -24,9 +24,22 @@ let theButtons = document.querySelectorAll("#buttonHolder img"),
 // 	// and updating the background-image style of the puzzle board element.
 
 // 	// bug fix #2 should go here. it's at most 3 lines of JS code.
+function resetPuzzleBoard() {
+    // Iterate over all drop zones and remove puzzle pieces
+	dropZones.forEach(zone => {while (zone.firstChild) {zone.removeChild(zone.firstChild);}});
+    // Append puzzle pieces back to the original container
+        document.querySelector('.puzzle-pieces').appendChild(piece);};
+
+// reset puzzle board when new background is selected		
+function changeBGImage() {resetPuzzleBoard();
+    puzzleBoard.style.backgroundImage = `url(images/backGround${this.id}.jpg)`;
+}
+
+// reset button event listener
+document.querySelector("#resetButton").addEventListener("click", resetPuzzleBoard);
 
 
-
+// code continues after bug fix
 
 function handleStartDrag() { 
 	console.log('started dragging this piece:', this);

@@ -46,6 +46,12 @@ in order to fix this we can create a new function
 
 we can call this function resetPuzzleBoard to make it simple
 
+like so:
+
+function resetPuzzleBoard() {dropZones.forEach(zone => {while (zone.firstChild) {zone.removeChild(zone.firstChild);}});
+
+document.querySelector('.puzzle-pieces').appendChild(piece);};
+
 the images are children of the puzzle zone once they have been dropped in the puzzle
 
 so we can add in code that removes all images (children) from their current container and adds (appends) all puzzle pieces to their original container when triggered
@@ -58,4 +64,10 @@ document.querySelector("#resetButton").addEventListener("click", resetPuzzleBoar
 
 so when the event listener is triggered the resetPuzzleboard function will run
 
-we can also create a function
+we can also create a function that will call upon the resetPuzzleBoard function when a new background image is clicked
+
+like so:
+
+function changeBGImage() {resetPuzzleBoard();
+    puzzleBoard.style.backgroundImage = `url(images/backGround${this.id}.jpg)`;
+}
