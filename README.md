@@ -29,3 +29,48 @@ in order to do this we can add an exclaimation point to our like of code like so
 if(!this.querySelector('img))
 
 now this line of code will make the java check the zone to see if there IS an image, that is true, if there is an image, it will prevent any more images from being dropped.
+
+bug fix #2
+
+there is a second bug within the java script. 
+
+on the site there is a reset button that should remove all pieces from the puzzle board when pressed. 
+
+it does not work. 
+
+there are also 4 different puzzles that can be made on this puzzle site. 
+
+when switching between puzzles, the puzzle pieces should also reset.
+
+in order to fix this we can create a new function
+
+we can call this function resetPuzzleBoard to make it simple
+
+so we can add in code that removes all images (children) from their current container and adds (appends) all puzzle pieces to their original container when triggered
+
+like so:
+
+function resetPuzzleBoard() {dropZones.forEach(zone => {while (zone.firstChild) {zone.removeChild(zone.firstChild);}});
+
+ puzzlePieces.forEach(piece => document.querySelector('.puzzle-pieces').appendChild(piece))};
+
+the images are children of the puzzle zone once they have been dropped in the puzzle
+
+then we can add an event listener that will trigger when the #resetButton id item is clicked (i changed it from #resetBut to #resetButton because i dont like what #resetBut implies)
+
+like so:
+
+document.querySelector("#resetButton").addEventListener("click", resetPuzzleBoard);
+
+so when the event listener is triggered the resetPuzzleboard function will run
+
+we can also create a function that will call upon the resetPuzzleBoard function when a new background image is clicked
+
+like so:
+
+function changeBGImage() {resetPuzzleBoard();
+    puzzleBoard.style.backgroundImage = `url(images/backGround${this.id}.jpg)`;
+}
+
+
+by adding these line of code, we can fix bug #2

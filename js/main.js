@@ -18,15 +18,26 @@ let theButtons = document.querySelectorAll("#buttonHolder img"),
 // step 3
 // functionality always goes in the middle -> how do we want
 // the app to behave?
-function changeBGImage() {
-	// the `` is a JavaScript template string. It tells the JS enging to evaluate the expression
-	// inside the braces - run that little bit of code. In this case it's just pulling the ID of the
-	// button we clicked on and putting it at the end of the image name (0, 1, 2, 3)
-	// and updating the background-image style of the puzzle board element.
+// 	// the `` is a JavaScript template string. It tells the JS enging to evaluate the expression
+// 	// inside the braces - run that little bit of code. In this case it's just pulling the ID of the
+// 	// button we clicked on and putting it at the end of the image name (0, 1, 2, 3)
+// 	// and updating the background-image style of the puzzle board element.
 
-	// bug fix #2 should go here. it's at most 3 lines of JS code.
-	puzzleBoard.style.backgroundImage = `url(images/backGround${this.id}.jpg)`;
-}
+// 	// bug fix #2 should go here. it's at most 3 lines of JS code.
+function resetPuzzleBoard() {
+    // Iterate over all drop zones and remove puzzle pieces
+	dropZones.forEach(zone => {while (zone.firstChild) {zone.removeChild(zone.firstChild);}});
+    // Append puzzle pieces back to the original container
+   puzzlePieces.forEach(piece => document.querySelector('.puzzle-pieces').appendChild(piece))};
+	// reset puzzle board when new background is selected		
+	function changeBGImage() {resetPuzzleBoard();
+		puzzleBoard.style.backgroundImage = `url(images/backGround${this.id}.jpg)`;
+	}
+	// reset button event listener
+	document.querySelector("#resetButton").addEventListener("click", resetPuzzleBoard);
+
+
+// code continues after bug fix
 
 function handleStartDrag() { 
 	console.log('started dragging this piece:', this);
@@ -46,13 +57,14 @@ function handleDrop(event) {
 
 // bug fix #1 should go here and should be about 3 lines of code
 
-if(!this.querySelector('img'))
-
-	this.appendChild(draggedPiece);
+if(!this.querySelector('img'))this.appendChild(draggedPiece);
 }
 
 // 1 to many event handling
 // add event handling to each button in the collection of buttons, one at a time
+
+
+
 theButtons.forEach(button => button.addEventListener("click", changeBGImage));
 
 // add the drag event handling to the puzzle pieces
@@ -63,3 +75,4 @@ dropZones.forEach(zone => zone.addEventListener('dragover', handleDragOver));
 
 dropZones.forEach(zone => zone.addEventListener('drop', handleDrop));
 
+	
