@@ -44,12 +44,18 @@ when switching between puzzles, the puzzle pieces should also reset.
 
 in order to fix this we can create a new function
 
-we can call this function resetPuzzle to make it simple
+we can call this function resetPuzzleBoard to make it simple
 
 the images are children of the puzzle zone once they have been dropped in the puzzle
 
-so we can add in code that removes all children of the drop done when a something happens
+so we can add in code that removes all images (children) from their current container and adds (appends) all puzzle pieces to their original container when triggered
 
-then we can add an event listener that will trigger when the reset button is pressed
+then we can add an event listener that will trigger when the #resetButton id item is clicked (i changed it from #resetBut to #resetButton because i dont like what #resetBut implies)
 
-so when the event listener is triggered, all children (images) of the drop zone will be removed
+like so:
+
+document.querySelector("#resetButton").addEventListener("click", resetPuzzleBoard);
+
+so when the event listener is triggered the resetPuzzleboard function will run
+
+we can also create a function
